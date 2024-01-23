@@ -1,5 +1,5 @@
 // write a program which checks if sorted array is having two
-// values whos some is zero
+// values whos sum is zero
 // return two values in form of array
 function sumZero(arr) {
   // take two  pointers left and write
