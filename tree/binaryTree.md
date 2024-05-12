@@ -1,7 +1,8 @@
 # Traversal
  ## DFS
 ### Preorder 
- ```preorder(root){
+ ```
+preorder(root){
     if(root===null)
        return 
     visit(root)
@@ -10,7 +11,8 @@
   }
   ```
 ### Inorder 
-```inorder(root){
+```
+inorder(root){
   if(root===null)
     return
   inorder(root.left)
@@ -19,7 +21,8 @@
 }
 ```
 ### Postorder 
-```postorder(root){
+```
+postorder(root){
   if(root===null)
     return
   postorder(root.left)
