@@ -52,3 +52,12 @@ postorder(root){
     }
   }
 ```
+## Height of binary tree
+ ```
+ height(node)
+    {
+        if(node===null) return 0
+        return Math.max(1+this.height(node.left),1+this.height(node.right))
+    }
+   ```
+
