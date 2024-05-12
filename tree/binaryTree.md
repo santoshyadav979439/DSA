@@ -19,7 +19,7 @@
 }
 ```
 ### Postorder 
-`postorder(root){
+```postorder(root){
   if(root===null)
     return
   postorder(root.left)
