@@ -30,3 +30,14 @@ postorder(root){
   visit(root)
 }
 ```
+ ### BFS or level order traversal
+  lavel order traversal can be done using queue data structure. It can be done using iterative approach. Algo is simple
+   1. Add root to queue (Q)
+   2. while Q is not empty do following
+      1. Get first element from Q using shift of array and store this in node
+      2. Visit node -
+      3. if node has left child insert that in Q
+      4. if node have right child insert that in Q
+      5. Repeat 2
+     
+      6. 
