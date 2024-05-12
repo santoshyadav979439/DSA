@@ -40,4 +40,15 @@ postorder(root){
       4. if node have right child insert that in Q
       5. Repeat 2
      
-      6. 
+ ```
+  levelOrder(root) {
+    let q = [];
+    if (root !== null) q.push(root);
+    while (q.length !== 0) {
+      const node = q.shift();
+      console.log(node.data);
+      if (node.left != null) q.push(node.left);
+      if (node.right != null) q.push(node.right);
+    }
+  }
+```
