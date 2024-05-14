@@ -67,18 +67,39 @@ postorder(root){
  Above problems can solved using same strategy.
 Solution :
 ```
+1. Diameter of tree
 var diameterOfBinaryTree = function (root) {
     let result = -Infinity
     function path(root) {
         if (root === null) return 0
         const leftPath = path(root.left)
         const rightPath = path(root.right)
-        const sum=leftPath + rightPath + 1
-        result = Math.max(sum,result)
+        const total=leftPath + rightPath + 1
+        result = Math.max(total,result)
         return Math.max(leftPath, rightPath) + 1
     }
     path(root)
     return result - 1 // It is giving no of node. Result should be no of edges (node-1)
 };
 ```
-
+2.Binary tree Maximum Path Sum
+   ```
+var maxPathSum = function (root) {
+    let result = -Infinity
+    function path(root) {
+        if (root === null) return 0;
+        const leftPath = Math.max(0, path(root.left))
+        const rightPath = Math.max(0, path(root.right))
+        const total = leftPath + rightPath + root.val;
+        result = Math.max(result, total)
+        return Math.max(leftPath, rightPath) + root.val
+    }
+    path(root)
+    return result;
+};
+```
+As we can see both problems are same only diffrence is that 
+1. cost is stored as node value in second problem and we are returning
+total sum of node value instead of edge sum. 
+2. we are ignoring negative sum of nodes value since it will not maximize total sum. The path wgich is contributing negative cost can be ignored.
+   
