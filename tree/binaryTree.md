@@ -60,4 +60,25 @@ postorder(root){
         return Math.max(1+this.height(node.left),1+this.height(node.right))
     }
    ```
+## Calculate diameter or path in binary tree 
+1. https://leetcode.com/problems/binary-tree-maximum-path-sum/
+2. https://leetcode.com/problems/diameter-of-binary-tree/description/
+![Screenshot 2024-05-14 at 21 59 14](https://github.com/santoshyadav979439/DSA/assets/49767268/47252bc3-6dbe-4298-a05a-45f0c1eca051)
+ Above problems can solved using same strategy.
+Solution :
+```
+var diameterOfBinaryTree = function (root) {
+    let result = -Infinity
+    function path(root) {
+        if (root === null) return 0
+        const leftPath = path(root.left)
+        const rightPath = path(root.right)
+        const sum=leftPath + rightPath + 1
+        result = Math.max(sum,result)
+        return Math.max(leftPath, rightPath) + 1
+    }
+    path(root)
+    return result - 1 // It is giving no of node. Result should be no of edges (node-1)
+};
+```
 
