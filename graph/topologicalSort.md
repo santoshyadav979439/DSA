@@ -59,3 +59,5 @@ function findOrder(numCourses: number, prerequisites: number[][]): number[] {
     return ans.reverse()
 };
 ```
+### Time Complexity
+O(V+E) - V represents number of vertex and E represents no of edges
