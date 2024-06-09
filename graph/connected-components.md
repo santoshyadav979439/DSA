@@ -46,7 +46,7 @@ To solve above problem approch is very simple.
     }
 
     function getNeighbours([i, j]) {
-        const deltaIndexes = [[0, 1], [1, 0], [0, -1], [-1, 1]]
+        const deltaIndexes = [[0, 1], [1, 0], [0, -1], [-1, 0]]
         return deltaIndexes.map(([detaRow, deltacol]) => [detaRow + i, deltacol + j]).filter(([row, col]) => row >= 0 && col >= 0 && row < m && col < n)
     }
 }
