@@ -38,6 +38,7 @@ class Graph{
   bfs(v){
       const visited = new Set()
       const q=[]
+      visired.add(v)
       q.push(v)
       
       while(q.length){
@@ -46,7 +47,10 @@ class Graph{
           const list = this.adjencyList.get(node)
           for(let n of list){
               if(!visited.has(n))
-              q.push(n)
+              {
+                visited.add(n)
+                 q.push(n)
+              }
           }
           
       }  
