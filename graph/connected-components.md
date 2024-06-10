@@ -9,7 +9,11 @@ To solve above problem approch is very simple.
    4 directions can be found by adding these value to index of array element [0-1], [-1,0],[1,0],[0,1]
   Full solution as follows
   ```
-      var numIslands = function (grid) {
+      /**
+ * @param {character[][]} grid
+ * @return {number}
+ */
+var numIslands = function (grid) {
     const m = grid.length
     const n = grid[0].length
     const visited = new Array(m)
@@ -34,11 +38,10 @@ To solve above problem approch is very simple.
         while (q.length) {
             const node = q.shift()
             const neighbours = getNeighbours(node)
-            visited[node[0]][node[1]] = true
             for (let [row, col] of neighbours) {
                 if (!visited[row][col] && grid[row][col] === '1') {
+                    visited[row][col] = true;
                     q.push([row, col])
-
                 }
             }
         }
@@ -47,7 +50,7 @@ To solve above problem approch is very simple.
 
     function getNeighbours([i, j]) {
         const deltaIndexes = [[0, 1], [1, 0], [0, -1], [-1, 0]]
-        return deltaIndexes.map(([detaRow, deltacol]) => [detaRow + i, deltacol + j]).filter(([row, col]) => row >= 0 && col >= 0 && row < m && col < n)
+        return deltaIndexes.map(([detaRow, deltacol]) => [detaRow + i, deltacol + j]).filter(([row, col]) => row >= 0 && col >= 0 && row < m && col < n && grid[row][col] === '1')
     }
 }
   ```
