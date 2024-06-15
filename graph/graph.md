@@ -101,3 +101,25 @@ graph.addEdge(4,2,9)
 graph.addEdge(2,401,9)
 console.log(graph.dfs(2))
 ```
+#### Find path between 2 nodes 
+  - node is source, arr is to store the path
+```function dfs(node, target, arr, visited, adjList) {
+    if (!visited.has(node) && adjList.has(node)) {
+        visited.add(node)
+        arr.push(node)
+        if (node === target)
+            return true
+
+        const neighbours = adjList.get(node)
+        if (neighbours) {
+            for (let neighbour of neighbours) {
+                if (dfs(neighbour.node, target, arr, visited, adjList))
+                    return true
+            }
+        }
+        arr.pop()
+
+    }
+} ```
+Problems based on above concept
+1. https://leetcode.com/problems/evaluate-division/?envType=study-plan-v2&envId=top-interview-150
