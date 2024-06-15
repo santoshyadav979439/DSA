@@ -9,8 +9,8 @@ To solve above problem approch is very simple.
    4 directions can be found by adding these value to index of array element [0-1], [-1,0],[1,0],[0,1]
   Full solution as follows
   
-  ```
-var numIslands = function (grid) {
+  
+ ``` var numIslands = function (grid) {
     const m = grid.length
     const n = grid[0].length
     const visited = new Array(m)
@@ -50,4 +50,4 @@ var numIslands = function (grid) {
         return deltaIndexes.map(([detaRow, deltacol]) => [detaRow + i, deltacol + j]).filter(([row, col]) => row >= 0 && col >= 0 && row < m && col < n && grid[row][col] === '1')
     }
 }
-  ```
+```
