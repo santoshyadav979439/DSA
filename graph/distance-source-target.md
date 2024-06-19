@@ -7,7 +7,8 @@
 https://leetcode.com/problems/word-ladder/description/
 
 Solution: 
-``` var minMutation = function (startGene, endGene, bank) {
+```
+var minMutation = function (startGene, endGene, bank) {
     if (!bank.includes(endGene)) return -1
     const q = []
     q.push([startGene, 0])
@@ -42,6 +43,7 @@ function getNeighbours(node, bank) {
             result.push(gene)
     }
     return result;
-} ```
+}
+```
 Similar Problem: 
 https://leetcode.com/problems/minimum-genetic-mutation/description/
