@@ -18,3 +18,20 @@
     return max
 
   ```
+### Running sum or product pattern
+Example : Find a sub array with largest sum or product and return product.
+https://leetcode.com/problems/maximum-product-subarray/description/
+- In this kind of problems find running sum or product ending at an index and maintain maxSum or product variable.
+- Solution for above problem
+  
+```
+var maxSubArray = function (nums) {
+    let runningSum = 0, maxSum = -Infinity
+    for (let num of nums) {
+        runningSum = runningSum >= 0 ? runningSum + num : num;
+        maxSum = Math.max(maxSum, runningSum)
+    }
+    return maxSum
+};
+```
+
